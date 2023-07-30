@@ -77,9 +77,9 @@ fun MacrobenchmarkScope.scrollSnackListJourney() {
 fun MacrobenchmarkScope.goToSnackDetailJourney() {
     val snackList = device.findObject(By.res("snack_list"))
     val snacks = snackList.findObjects(By.res("snack_item"))
-    // Select snack from the list based on running iteration
+    // Select snack from the list based on running iteration.
     val index = (iteration ?: 0) % snacks.size
     snacks[index].click()
-    // Wait until the screen is gone = the detail is shown
-    device.wait(Until.gone(By.res("snack_list")), 10_000)
+    // Wait until the screen is gone = the detail is shown.
+    device.wait(Until.gone(By.res("snack_list")), 5_000)
 }
